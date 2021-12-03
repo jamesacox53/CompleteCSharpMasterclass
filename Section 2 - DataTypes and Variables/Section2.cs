@@ -8,7 +8,8 @@ namespace Section2Namespace
         static void Main(string[] args)
         {
             // Section2.ExerciseStrings1();
-            Section2.ExerciseStrings2();
+            // Section2.ExerciseStrings2();
+            ChallengeDatatypesAndVariables();
         }
 
         public static void ExerciseStrings1()
@@ -41,6 +42,59 @@ namespace Section2Namespace
             string surname = Console.ReadLine();
             string fullName = string.Concat(firstName, " ", surname);
             Console.WriteLine($"Your full name is: {fullName}");
+
+        }
+
+        public static void ChallengeDatatypesAndVariables()
+        {
+
+            byte myByte = 250;
+            sbyte mySByte = -120;
+            Console.WriteLine(myByte);
+            Console.WriteLine(mySByte);
+
+            short myShort = -32700;
+            ushort myUShort = 65500;
+            Console.WriteLine(myShort);
+            Console.WriteLine(myUShort);
+
+            int myInt = -2147483000;
+            uint myUInt = 4294967000;
+            Console.WriteLine(myInt);
+            Console.WriteLine(myUInt);
+
+            long myLong = -9223372036854775000;
+            ulong myUlong = 18446744073709551000;
+            Console.WriteLine(myLong);
+            Console.WriteLine(myUlong);
+
+            float myFloat = -340.123f;
+            Console.WriteLine(myFloat);
+
+            double myDouble = -179769.1234;
+            Console.WriteLine(myDouble);
+
+            decimal myDecimal = new Decimal(-12345.12345);
+            Console.WriteLine(myDecimal);
+
+            char myChar = 'j';
+            Console.WriteLine(myChar);
+
+            bool myBool = false;
+            Console.WriteLine(myBool);
+
+            string myString = "Hello";
+            Console.WriteLine(myString);
+
+            string value1 = "I control text";
+            Console.WriteLine(value1);
+
+            string value2 = "30";
+
+            int num2 = Int32.Parse(value2);
+            Console.WriteLine(num2);
+
+
 
         }
     
