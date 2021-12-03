@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31919.166
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Section 1 - Your First CSharp Program", "Section 1 - Your First CSharp Program\Section 1 - Your First CSharp Program.csproj", "{8AFE4D47-D64A-4D1B-916D-97D4EC0EBF9F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Section 1 - Your First CSharp Program", "Section 1 - Your First CSharp Program\Section 1 - Your First CSharp Program.csproj", "{8AFE4D47-D64A-4D1B-916D-97D4EC0EBF9F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Section 2 - DataTypes and Variables", "Section 2 - DataTypes and Variables\Section 2 - DataTypes and Variables.csproj", "{3B131C1A-C07E-4369-9D13-E385FE48F5E7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{8AFE4D47-D64A-4D1B-916D-97D4EC0EBF9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8AFE4D47-D64A-4D1B-916D-97D4EC0EBF9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8AFE4D47-D64A-4D1B-916D-97D4EC0EBF9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B131C1A-C07E-4369-9D13-E385FE48F5E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B131C1A-C07E-4369-9D13-E385FE48F5E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B131C1A-C07E-4369-9D13-E385FE48F5E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B131C1A-C07E-4369-9D13-E385FE48F5E7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
