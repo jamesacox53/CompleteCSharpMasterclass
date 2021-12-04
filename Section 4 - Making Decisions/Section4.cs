@@ -7,9 +7,13 @@ namespace Section4Namespace
         static string username;
         static string password;
 
+        static int highscore = 300;
+        static string highscorePlayer = "James";
+
         static void Main(string[] args)
         {
-            ChallengeIfStatements();
+            // ChallengeIfStatements();
+            ChallengeIfStatements2();
         }
 
         public static void ChallengeIfStatements()
@@ -50,6 +54,27 @@ namespace Section4Namespace
             } else
             {
                 Console.WriteLine("Login unsuccessful.");
+            }
+        }
+
+        public static void ChallengeIfStatements2()
+        {
+            CheckHighscore(100, "Kyle");
+            CheckHighscore(600, "Stan");
+        }
+
+        public static void CheckHighscore(int score, string playerName)
+        {
+            if(score > highscore)
+            {
+                highscore = score;
+                highscorePlayer = playerName;
+
+                Console.WriteLine($"New highscore: {highscore} which is held by {highscorePlayer}. All hail {highscorePlayer}.");
+
+            } else
+            {
+                Console.WriteLine($"The old highscore: {highscore} held by {highscorePlayer} couldn't be broken. All hail {highscorePlayer}.");
             }
         }
     }
