@@ -13,7 +13,8 @@ namespace Section4Namespace
         static void Main(string[] args)
         {
             // ChallengeIfStatements();
-            ChallengeIfStatements2();
+            // ChallengeIfStatements2();
+            ChallengeTernaryOperator();
         }
 
         public static void ChallengeIfStatements()
@@ -77,5 +78,28 @@ namespace Section4Namespace
                 Console.WriteLine($"The old highscore: {highscore} held by {highscorePlayer} couldn't be broken. All hail {highscorePlayer}.");
             }
         }
+
+        public static void ChallengeTernaryOperator()
+        {
+            Console.WriteLine("Please input temperature as an integer:");
+            string inputTemperatureString = Console.ReadLine();
+            int inputTemperature;
+
+            try
+            {
+
+                inputTemperature = Int32.Parse(inputTemperatureString);
+
+            } catch (Exception)
+            {
+                Console.WriteLine("Not a valid temperature");
+                return;
+            }
+
+            Console.WriteLine(inputTemperature <= 15 ? "It is too cold here" : (inputTemperature > 28 ? "It is hot here" : "it is ok"));
+
+        }
+
+
     }
 }
