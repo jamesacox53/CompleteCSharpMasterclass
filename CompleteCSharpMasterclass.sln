@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Section 3 - Functions and M
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Section 4 - Making Decisions", "Section 4 - Making Decisions\Section 4 - Making Decisions.csproj", "{E5A4DC44-431C-4FFC-A224-6A45CC210164}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Section 5 - Loops", "Section 5 - Loops\Section 5 - Loops.csproj", "{5AAC7E46-1916-4874-9D9A-29B1B90C4889}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Section 5 - Loops", "Section 5 - Loops\Section 5 - Loops.csproj", "{5AAC7E46-1916-4874-9D9A-29B1B90C4889}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Section 7 - Collections in CSharp", "Section 7 - Collections in CSharp\Section 7 - Collections in CSharp.csproj", "{6F8AF1DB-BF49-4C10-A1BD-58B9DD3B8B21}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{5AAC7E46-1916-4874-9D9A-29B1B90C4889}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5AAC7E46-1916-4874-9D9A-29B1B90C4889}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5AAC7E46-1916-4874-9D9A-29B1B90C4889}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F8AF1DB-BF49-4C10-A1BD-58B9DD3B8B21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F8AF1DB-BF49-4C10-A1BD-58B9DD3B8B21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F8AF1DB-BF49-4C10-A1BD-58B9DD3B8B21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F8AF1DB-BF49-4C10-A1BD-58B9DD3B8B21}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
