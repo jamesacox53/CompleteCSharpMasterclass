@@ -6,8 +6,12 @@ namespace Section7Namespace
     {
         static void Main(string[] args)
         {
-            ChallengeForeachLoop();
+            // ChallengeForeachLoop();
 
+            // understandingNestedLoops();
+
+            TicTacToe ticTacToeGame = new TicTacToe();
+            ticTacToeGame.PlayTicTacToe();
         }
 
         public static void ChallengeForeachLoop()
@@ -93,6 +97,28 @@ namespace Section7Namespace
             } else
             {
                 Console.WriteLine($"Is is an invalid: {dataType}");
+            }
+        }
+
+        public static void understandingNestedLoops()
+        {
+            int[,] matrix =
+            {
+                {1, 2, 3 },
+                {4, 5, 6 },
+                {7, 8, 9 },
+            };
+
+            for (int i = 0; i < matrix.GetLength(0); i++)
+            {
+
+                Console.WriteLine("Row: " + i);
+
+                for (int j = 0; j < matrix.GetLength(1); j++)
+                {
+                    Console.WriteLine("Column: " + j);
+                    Console.WriteLine("Element: " + matrix[i, j]);
+                }
             }
         }
     }
