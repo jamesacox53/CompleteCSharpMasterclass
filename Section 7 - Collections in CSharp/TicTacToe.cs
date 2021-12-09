@@ -8,28 +8,72 @@ namespace Section7Namespace
 {
     internal class TicTacToe
     {
-
+        private int defaultGridSize = 3;
         private int gridSize;
-        private int[,] ticTacToeGrid;
+        private string[,] ticTacToeGrid;
+        private int numPlayers = 2;
+        private char[] playerSymbols = { 'O', 'X' };
+        private int playerTurn = 1;
 
         public TicTacToe()
         {
-            this.gridSize = 3;
-            this.ticTacToeGrid = new int[this.gridSize, this.gridSize];
+            setUp(this.defaultGridSize);
+        }
+
+        public TicTacToe(int gridSize)
+        {
+            setUpWithGridSize(gridSize);
+        }
+
+        public TicTacToe(int gridSize, int numPlayers, char[] playerSymbols)
+        {
+            setUpWithNumPlayers(gridSize, numPlayers, playerSymbols);
+        }
+
+        private void setUp(int gridSize)
+        {
+            this.gridSize = gridSize;
+            this.ticTacToeGrid = new string[this.gridSize, this.gridSize];
+            initializeGrid();
+        }
+
+        private void setUpWithGridSize(int gridSize)
+        {
+            if (gridSize >= 1 && gridSize <= 10)
+            {
+                setUp(gridSize);
+            }
+            else
+            {
+                Console.WriteLine("Invalid gridSize selection, using default grid Size of 3.");
+                setUp(this.defaultGridSize);
+            }
+        }
+
+        private void setUpWithNumPlayers(int gridSize, int numPlayers, char[] playerSymbols)
+        {
+            setUpWithGridSize(gridSize);
+
+            if (numPlayers >= 2 && numPlayers <= 10 && arePlayerSymbolsValid(numPlayers, playerSymbols))
+            {
+                this.numPlayers = numPlayers;
+                this.playerSymbols = playerSymbols;
+            }
+            else
+            {
+                Console.WriteLine("Invalid number of players selected or number of player symbols so using the default of 2 players with the symbols O and X");
+            }
         }
 
         public void PlayTicTacToe()
         {
-
             bool gameOver = false;
-            int playerTurn = 1;
 
             PrintTicTacToeGrid();
 
             while (!gameOver)
             {
-
-                Console.WriteLine($"It is player {playerTurn}'s turn.");
+                Console.WriteLine($"It is player {this.playerTurn}'s turn.");
 
                 string playerChoiceString = Console.ReadLine();
 
@@ -40,7 +84,6 @@ namespace Section7Namespace
                 if (!correctlyParsed)
                 {
                     Console.WriteLine("Please input a valid number");
-
                 }
                 else
                 {
@@ -52,141 +95,266 @@ namespace Section7Namespace
                     {
                         Console.WriteLine("Please input a valid square");
                     }
-                    else if (this.ticTacToeGrid[x, y] != 0)
+                    else if (hasSquareAlreadyBeenPlayed(x, y))
                     {
-                        Console.WriteLine("Please input a square which hasn't previously been used");
-
+                        Console.WriteLine("Please input a square which hasn't previously been played");
                     }
                     else
                     {
-                        this.ticTacToeGrid[x, y] = playerTurn;
+                        // Set the grid position to be the players symbol
+                        this.ticTacToeGrid[x, y] = this.playerSymbols[this.playerTurn - 1].ToString();
+
+                        Console.Clear();
                         PrintTicTacToeGrid();
 
-                        if (checkIfWon(x, y, playerTurn))
+                        if (checkIfWon(x, y))
                         {
-                            Console.WriteLine($"Congratulations player {playerTurn}, you win!");
-                            return;
+                            gameOver = !gameFinished($"Congratulations player {playerTurn}, you win!");
                         }
                         else if (checkIfDraw())
                         {
-                            Console.WriteLine("Unlucky, the match ends in a draw. Nobody wins.");
-                            return;
+                            gameOver = !gameFinished("Unlucky, the match ends in a draw. Nobody wins.");
                         }
-
-
-                        playerTurn = (playerTurn % 2) + 1;
+                        else
+                        {
+                            switchPlayer();
+                        }
                     }
                 }
-
             }
         }
 
         private void PrintTicTacToeGrid()
         {
-
+            // ticTacToeStringGrid will hold the rows as strings.
             string[] ticTacToeStringGrid = new string[this.gridSize];
 
             for (int i = 0; i < this.ticTacToeGrid.GetLength(0); i++)
             {
-                string[] rows = new string[this.gridSize];
+                // Each grid row will be printed as 3 lines to the console. So gridRow will
+                //  hold those 3 lines: the top line, the middle line and the bottom line.
+                string[] gridRow = new string[3];
 
-                rows[0] = getBlankRow();
+                // The top line parts
+                string[] squaresTopParts = new string[this.gridSize];
 
-                string[] rowArray = getTicTacToeRowFromGrid(i);
-                rows[1] = "   " + string.Join("   |   ", rowArray) + "   ";
+                // The middle line parts
+                string[] squaresMiddleParts = new string[this.gridSize];
 
-                rows[2] = getBlankRow();
+                // the bottom line parts
+                string[] squaresBottomParts = new string[this.gridSize];
 
-                ticTacToeStringGrid[i] = string.Join("\n", rows);
+
+                for (int j = 0; j < this.ticTacToeGrid.GetLength(1); j++) 
+                {   
+                    string[] squareStringParts = getSquareStringParts(this.ticTacToeGrid[i, j]);
+
+                    squaresTopParts[j] = squareStringParts[0];
+                    squaresMiddleParts[j] = squareStringParts[1];
+                    squaresBottomParts[j] = squareStringParts[2];
+                }
+
+                gridRow[0] = string.Join("|", squaresTopParts);
+                gridRow[1] = string.Join("|", squaresMiddleParts);
+                gridRow[2] = string.Join("|", squaresBottomParts);
+
+                string gridRowString = string.Join("\n", gridRow);
+
+                ticTacToeStringGrid[i] = gridRowString;
             }
 
-            Console.WriteLine(string.Join("\n" + getSeparatorRow() + "\n", ticTacToeStringGrid));
+            string ticTacToeGridAsString = string.Join("\n" + getSeparatorRow() + "\n", ticTacToeStringGrid);
 
-        }
-
-        private string getTicTacToeGridElement(int ticTacToeElement, int row, int col)
-        {
-            switch (ticTacToeElement)
-            {
-                case 1: return "O";
-                case 2: return "X";
-                default: return ((row * 3) + col + 1).ToString();
-            }
-        }
-
-        private string[] getTicTacToeRowFromGrid(int row)
-        {
-            string[] retArray = new string[this.ticTacToeGrid.GetLength(1)];
-
-            for (int j = 0; j < this.ticTacToeGrid.GetLength(1); j++)
-            {
-                retArray[j] = getTicTacToeGridElement(this.ticTacToeGrid[row, j], row, j);
-            }
-
-            return retArray;
-        }
-
-        private string getBlankRow()
-        {
-            return "       |       |       ";
+            Console.WriteLine(ticTacToeGridAsString);
         }
 
         private string getSeparatorRow()
         {
-            return "-------|-------|-------";
-        }
+            string[] separatorRow = new string[this.gridSize];
 
-        private bool checkIfWon(int x, int y, int playerTurn)
-        {
-            bool isRow = true;
-
-            for (int i = 0; i < this.gridSize; i++)
+            for (int i = 0; i < separatorRow.Length; i++)
             {
-                isRow = isRow && (this.ticTacToeGrid[i, y] == playerTurn);
+                // Each tictactoe grid square is 7 characters wide when
+                // printed to the screen.
+                separatorRow[i] = "".PadRight(7, '-');
             }
 
+            string separator = String.Join('+', separatorRow);
+
+            return separator;
+        }
+
+        private bool checkIfWon(int x, int y)
+        {
+            string playerSymbol = this.playerSymbols[this.playerTurn - 1].ToString();
+
+            bool isRow = true;
+            
+            for (int i = 0; i < this.gridSize; i++)
+            {
+                if (this.ticTacToeGrid[i, y] != playerSymbol)
+                {
+                    isRow = false;
+                    break;
+                }
+            }
             if (isRow) return true;
 
             bool isCol = true;
 
             for (int j = 0; j < this.gridSize; j++)
             {
-                isCol = isCol && (this.ticTacToeGrid[x, j] == playerTurn);
+                if (this.ticTacToeGrid[x, j] != playerSymbol)
+                {
+                    isCol = false;
+                    break;
+                }
             }
-
             if (isCol) return true;
 
-            bool isRightDiagonal = true;
-
-            for (int i = 0; i < this.gridSize; i++)
+            if (x == y)
             {
-                isRightDiagonal = isRightDiagonal && (this.ticTacToeGrid[i, i] == playerTurn);
+                bool isRightDiagonal = true;
+
+                for (int i = 0; i < this.gridSize; i++)
+                {
+                    if (this.ticTacToeGrid[i, i] != playerSymbol)
+                    {
+                        isRightDiagonal = false;
+                        break;
+                    }
+                }
+                if (isRightDiagonal) return true;
             }
-
-            if (isRightDiagonal) return true;
-
-            bool isLeftDiagonal = true;
-
-            for (int i = 0; i < this.gridSize; i++)
+            // if the grid position is on the left diagonal
+            if ((x == (this.gridSize - 1) - y) || (y == (this.gridSize - 1) - x))
             {
-                isLeftDiagonal = isLeftDiagonal && (this.ticTacToeGrid[i, (this.gridSize - 1) - i] == playerTurn);
-            }
+                bool isLeftDiagonal = true;
 
-            if (isLeftDiagonal) return true;
+                for (int i = 0; i < this.gridSize; i++)
+                {
+                    if (this.ticTacToeGrid[i, (this.gridSize - 1) - i] != playerSymbol)
+                    {
+                        isLeftDiagonal = false;
+                        break;
+                    }
+                }
+                if (isLeftDiagonal) return true;
+            }
 
             return false;
         }
 
         private bool checkIfDraw()
         {
-            foreach (int val in this.ticTacToeGrid)
+            foreach (string value in this.ticTacToeGrid)
             {
-                if (val == 0) return false;
+                bool wasSymbol = false;
+
+                foreach (char symbol in this.playerSymbols)
+                {
+                    if (symbol.ToString() == value)
+                    {
+                        wasSymbol = true;
+                        break;
+                    }
+                }
+                if (!wasSymbol) return false;
             }
 
             return true;
         }
 
-    }
+        private string[] getSquareStringParts (string element)
+        {
+            
+            // each grid square has 3 rows.
+            string[] retArray = new string[3];
 
+            // each grid square is 7 characters wide when printed to the screen.
+           
+            retArray[0] = "".PadRight(7, ' ');
+
+            string elementPaddedRight = element.PadRight(4, ' ');
+            retArray[1] = elementPaddedRight.PadLeft(7, ' ');
+
+            retArray[2] = "".PadRight(7, ' ');
+
+            return retArray;
+        }
+
+        private void initializeGrid()
+        {
+            for(int i = 0; i < this.ticTacToeGrid.GetLength(0); i++)
+            {
+                for (int j = 0; j < this.ticTacToeGrid.GetLength(1); j++)
+                {
+                    int gridNum = (i * this.gridSize) + j + 1;
+
+                    this.ticTacToeGrid[i, j] = gridNum.ToString();
+                }
+            }
+        }
+
+        private void switchPlayer()
+        {
+            this.playerTurn = (this.playerTurn % this.numPlayers) + 1;
+        }
+
+        private bool hasSquareAlreadyBeenPlayed(int row, int column)
+        {
+            string ticTacToeGridElement = this.ticTacToeGrid[row, column];
+
+            for (int i = 0; i < this.playerSymbols.Length; i++)
+            {
+                if (this.playerSymbols[i].ToString() == ticTacToeGridElement)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        private bool arePlayerSymbolsValid(int numPlayers, char[] playerSymbols)
+        {
+            if (playerSymbols.Length < numPlayers)
+            {
+                return false;
+            }
+
+            foreach (char playerSymbol in playerSymbols)
+            {
+                if (char.IsNumber(playerSymbol)) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        private bool decideIfWantToPlayAgain()
+        {
+            Console.WriteLine("Press q if you want to quit but press any other key if you want to play again.");
+            ConsoleKeyInfo key = Console.ReadKey();
+            if (key.KeyChar == 'q')
+            {
+                Console.WriteLine();
+                Console.WriteLine("Thank you for playing! Goodbye :)");
+                return false;
+            }
+            else 
+            {
+                Console.Clear();
+                initializeGrid();
+                this.playerTurn = 1;
+                PrintTicTacToeGrid();
+                return true;
+            }
+        }
+        private bool gameFinished(string message)
+        {
+            Console.WriteLine(message);
+            return decideIfWantToPlayAgain();
+        }
+    }
 }
