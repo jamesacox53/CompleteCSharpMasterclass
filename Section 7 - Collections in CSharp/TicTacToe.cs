@@ -69,11 +69,10 @@ namespace Section7Namespace
         {
             bool gameOver = false;
 
-            PrintTicTacToeGrid();
+            PrintTicTacToeGridAndMessages();
 
             while (!gameOver)
             {
-                Console.WriteLine($"Type q to quit the game.");
                 Console.WriteLine($"It is player {this.playerTurn}'s turn.");
 
                 string playerChoiceString = Console.ReadLine();
@@ -124,6 +123,7 @@ namespace Section7Namespace
                         }
                         else
                         {
+                            printQuitMessage();
                             switchPlayer();
                         }
                     }
@@ -341,7 +341,7 @@ namespace Section7Namespace
 
         private bool decideIfWantToPlayAgain()
         {
-            Console.WriteLine("Press q if you want to quit but press any other key if you want to play again.");
+            Console.WriteLine("Press q if you want to quit or press any other key if you want to play again.");
             ConsoleKeyInfo key = Console.ReadKey();
             if (key.KeyChar == 'q')
             {
@@ -353,7 +353,7 @@ namespace Section7Namespace
                 Console.Clear();
                 initializeGrid();
                 this.playerTurn = 1;
-                PrintTicTacToeGrid();
+                PrintTicTacToeGridAndMessages();
                 return true;
             }
         }
@@ -367,6 +367,17 @@ namespace Section7Namespace
         {
             Console.WriteLine();
             Console.WriteLine("Thank you for playing! Goodbye :).");
+        }
+
+        private void PrintTicTacToeGridAndMessages()
+        {
+            PrintTicTacToeGrid();
+            printQuitMessage();
+        }
+
+        private void printQuitMessage()
+        {
+            Console.WriteLine($"Type q to quit the game.");
         }
     }
 }
