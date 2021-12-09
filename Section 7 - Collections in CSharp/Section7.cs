@@ -16,7 +16,7 @@ namespace Section7Namespace
 
             // TicTacToe ticTacToeGame = new TicTacToe(16, 8, new char [] {'A', 'B', 'C', 'D', 'E', 'F', 'H', 'I'});
 
-            TicTacToe ticTacToeGame = new TicTacToe(4);
+            TicTacToe ticTacToeGame = new TicTacToe();
 
             ticTacToeGame.PlayTicTacToe();
         }

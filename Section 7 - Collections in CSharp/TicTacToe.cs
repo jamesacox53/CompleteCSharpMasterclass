@@ -61,7 +61,7 @@ namespace Section7Namespace
             }
             else
             {
-                Console.WriteLine("Invalid number of players selected or number of player symbols so using the default of 2 players with the symbols O and X");
+                Console.WriteLine("Invalid number of players selected or number of player symbols so using the default of 2 players with the symbols O and X.");
             }
         }
 
@@ -73,17 +73,24 @@ namespace Section7Namespace
 
             while (!gameOver)
             {
+                Console.WriteLine($"Type q to quit the game.");
                 Console.WriteLine($"It is player {this.playerTurn}'s turn.");
 
                 string playerChoiceString = Console.ReadLine();
 
+                if (playerChoiceString == "q")
+                {
+                    quitGame();
+                    return;
+                }
+                
                 int playerChoice;
 
                 bool correctlyParsed = int.TryParse(playerChoiceString, out playerChoice);
 
                 if (!correctlyParsed)
                 {
-                    Console.WriteLine("Please input a valid number");
+                    Console.WriteLine("Please input a valid number.");
                 }
                 else
                 {
@@ -93,11 +100,11 @@ namespace Section7Namespace
 
                     if (x < 0 || x >= this.gridSize || y < 0 || y >= this.gridSize)
                     {
-                        Console.WriteLine("Please input a valid square");
+                        Console.WriteLine("Please input a valid square.");
                     }
                     else if (hasSquareAlreadyBeenPlayed(x, y))
                     {
-                        Console.WriteLine("Please input a square which hasn't previously been played");
+                        Console.WriteLine("Please input a square which hasn't previously been played.");
                     }
                     else
                     {
@@ -338,8 +345,7 @@ namespace Section7Namespace
             ConsoleKeyInfo key = Console.ReadKey();
             if (key.KeyChar == 'q')
             {
-                Console.WriteLine();
-                Console.WriteLine("Thank you for playing! Goodbye :)");
+                quitGame();
                 return false;
             }
             else 
@@ -355,6 +361,12 @@ namespace Section7Namespace
         {
             Console.WriteLine(message);
             return decideIfWantToPlayAgain();
+        }
+
+        private void quitGame()
+        {
+            Console.WriteLine();
+            Console.WriteLine("Thank you for playing! Goodbye :).");
         }
     }
 }
