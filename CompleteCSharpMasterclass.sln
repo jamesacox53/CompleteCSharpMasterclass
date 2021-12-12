@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Section 4 - Making Decision
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Section 5 - Loops", "Section 5 - Loops\Section 5 - Loops.csproj", "{5AAC7E46-1916-4874-9D9A-29B1B90C4889}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Section 7 - Collections in CSharp", "Section 7 - Collections in CSharp\Section 7 - Collections in CSharp.csproj", "{6F8AF1DB-BF49-4C10-A1BD-58B9DD3B8B21}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Section 7 - Collections in CSharp", "Section 7 - Collections in CSharp\Section 7 - Collections in CSharp.csproj", "{6F8AF1DB-BF49-4C10-A1BD-58B9DD3B8B21}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Section 9 - Inheritance And More About OOP", "Section 9 - Inheritance And More About OOP\Section 9 - Inheritance And More About OOP.csproj", "{070C7E60-F06D-4C12-81FB-EFCDA396F12A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{6F8AF1DB-BF49-4C10-A1BD-58B9DD3B8B21}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F8AF1DB-BF49-4C10-A1BD-58B9DD3B8B21}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F8AF1DB-BF49-4C10-A1BD-58B9DD3B8B21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{070C7E60-F06D-4C12-81FB-EFCDA396F12A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{070C7E60-F06D-4C12-81FB-EFCDA396F12A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{070C7E60-F06D-4C12-81FB-EFCDA396F12A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{070C7E60-F06D-4C12-81FB-EFCDA396F12A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
