@@ -17,7 +17,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Section 7 - Collections in 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Section 9 - Inheritance And More About OOP", "Section 9 - Inheritance And More About OOP\Section 9 - Inheritance And More About OOP.csproj", "{070C7E60-F06D-4C12-81FB-EFCDA396F12A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Section 13 - WPF - Windows Presentation Foundation", "Section 13 - WPF - Windows Presentation Foundation\Section 13 - WPF - Windows Presentation Foundation.csproj", "{C98D589D-36F2-41AA-A5E6-0745F0C8EBD2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Section 13 - WPF - Windows Presentation Foundation", "Section 13 - WPF - Windows Presentation Foundation\Section 13 - WPF - Windows Presentation Foundation.csproj", "{C98D589D-36F2-41AA-A5E6-0745F0C8EBD2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Section 14 - Using Databases", "Section 14 - Using Databases\Section 14 - Using Databases.csproj", "{E28AAB75-E13F-4443-85A3-DA80E39F2FBE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{C98D589D-36F2-41AA-A5E6-0745F0C8EBD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C98D589D-36F2-41AA-A5E6-0745F0C8EBD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C98D589D-36F2-41AA-A5E6-0745F0C8EBD2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E28AAB75-E13F-4443-85A3-DA80E39F2FBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E28AAB75-E13F-4443-85A3-DA80E39F2FBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E28AAB75-E13F-4443-85A3-DA80E39F2FBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E28AAB75-E13F-4443-85A3-DA80E39F2FBE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
