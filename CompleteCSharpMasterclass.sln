@@ -21,6 +21,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Section 13 - WPF - Windows 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Section 14 - Using Databases", "Section 14 - Using Databases\Section 14 - Using Databases.csproj", "{E28AAB75-E13F-4443-85A3-DA80E39F2FBE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Section 15 - Linq", "Section 15 - Linq\Section 15 - Linq.csproj", "{F20BB029-DDDC-4BD5-90D2-5358C657E0BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Section 15 Part 2 - Linq to SQL", "Section 15 Part 2 - Linq to SQL\Section 15 Part 2 - Linq to SQL.csproj", "{FF89AC71-7B89-4A57-9303-4D8D3293FDB2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +67,14 @@ Global
 		{E28AAB75-E13F-4443-85A3-DA80E39F2FBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E28AAB75-E13F-4443-85A3-DA80E39F2FBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E28AAB75-E13F-4443-85A3-DA80E39F2FBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F20BB029-DDDC-4BD5-90D2-5358C657E0BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F20BB029-DDDC-4BD5-90D2-5358C657E0BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F20BB029-DDDC-4BD5-90D2-5358C657E0BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F20BB029-DDDC-4BD5-90D2-5358C657E0BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF89AC71-7B89-4A57-9303-4D8D3293FDB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF89AC71-7B89-4A57-9303-4D8D3293FDB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF89AC71-7B89-4A57-9303-4D8D3293FDB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF89AC71-7B89-4A57-9303-4D8D3293FDB2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
