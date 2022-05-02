@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Section 15 - Linq", "Sectio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Section 15 Part 2 - Linq to SQL", "Section 15 Part 2 - Linq to SQL\Section 15 Part 2 - Linq to SQL.csproj", "{FF89AC71-7B89-4A57-9303-4D8D3293FDB2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Section 16 - Currency Converter WPF App", "Section 16 - Currency Converter WPF App\Section 16 - Currency Converter WPF App.csproj", "{9F4E83D7-315A-4A83-8043-4AC8AAE274AF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{FF89AC71-7B89-4A57-9303-4D8D3293FDB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF89AC71-7B89-4A57-9303-4D8D3293FDB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF89AC71-7B89-4A57-9303-4D8D3293FDB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F4E83D7-315A-4A83-8043-4AC8AAE274AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F4E83D7-315A-4A83-8043-4AC8AAE274AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F4E83D7-315A-4A83-8043-4AC8AAE274AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F4E83D7-315A-4A83-8043-4AC8AAE274AF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
