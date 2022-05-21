@@ -9,7 +9,8 @@ namespace Section2Namespace
         {
             // Section2.ExerciseStrings1();
             // Section2.ExerciseStrings2();
-            ChallengeDatatypesAndVariables();
+            // ChallengeDatatypesAndVariables();
+            Assignment1();
         }
 
         public static void ExerciseStrings1()
@@ -93,11 +94,18 @@ namespace Section2Namespace
 
             int num2 = Int32.Parse(value2);
             Console.WriteLine(num2);
-
-
-
         }
     
-    }
+        public static void Assignment1()
+        {
+            string stringForFloat = "0.85"; // datatype should be float
+            string stringForInt = "12345"; // datatype should be int
 
+            float myFloat = float.Parse(stringForFloat);
+            int myInt = Int32.Parse(stringForInt);
+
+            Console.WriteLine(myFloat);
+            Console.WriteLine(myInt);
+        }
+    }
 }

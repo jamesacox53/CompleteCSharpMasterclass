@@ -16,9 +16,11 @@ namespace Section7Namespace
 
             // TicTacToe ticTacToeGame = new TicTacToe(16, 8, new char [] {'A', 'B', 'C', 'D', 'E', 'F', 'H', 'I'});
 
-            TicTacToe ticTacToeGame = new TicTacToe();
+            // TicTacToe ticTacToeGame = new TicTacToe();
 
-            ticTacToeGame.PlayTicTacToe();
+            // ticTacToeGame.PlayTicTacToe();
+
+            // CodingExercises.Exercise7.Run();
         }
 
         public static void ChallengeForeachLoop()
@@ -128,5 +130,7 @@ namespace Section7Namespace
                 }
             }
         }
+
+
     }
 }

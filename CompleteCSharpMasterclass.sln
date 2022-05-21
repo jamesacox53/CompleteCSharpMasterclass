@@ -27,6 +27,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Section 15 Part 2 - Linq to
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Section 16 - Currency Converter WPF App", "Section 16 - Currency Converter WPF App\Section 16 - Currency Converter WPF App.csproj", "{9F4E83D7-315A-4A83-8043-4AC8AAE274AF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Section 6 - OOP", "Section 6 - OOP\Section 6 - OOP.csproj", "{14BC8E90-7742-4DC3-95D7-A2E7C3080BAA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Section 10 - Polymorphism", "Section 10 - Polymorphism\Section 10 - Polymorphism.csproj", "{A81002EF-2309-4813-AAF8-64039AB9045B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Section 11 - Advanced CSharp Topics", "Section 11 - Advanced CSharp Topics\Section 11 - Advanced CSharp Topics.csproj", "{96E1D436-A3DA-4962-9AA6-F7D3D195056D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +87,18 @@ Global
 		{9F4E83D7-315A-4A83-8043-4AC8AAE274AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9F4E83D7-315A-4A83-8043-4AC8AAE274AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9F4E83D7-315A-4A83-8043-4AC8AAE274AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14BC8E90-7742-4DC3-95D7-A2E7C3080BAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14BC8E90-7742-4DC3-95D7-A2E7C3080BAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14BC8E90-7742-4DC3-95D7-A2E7C3080BAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14BC8E90-7742-4DC3-95D7-A2E7C3080BAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A81002EF-2309-4813-AAF8-64039AB9045B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A81002EF-2309-4813-AAF8-64039AB9045B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A81002EF-2309-4813-AAF8-64039AB9045B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A81002EF-2309-4813-AAF8-64039AB9045B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96E1D436-A3DA-4962-9AA6-F7D3D195056D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96E1D436-A3DA-4962-9AA6-F7D3D195056D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96E1D436-A3DA-4962-9AA6-F7D3D195056D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96E1D436-A3DA-4962-9AA6-F7D3D195056D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

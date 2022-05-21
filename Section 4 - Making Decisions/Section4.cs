@@ -14,7 +14,12 @@ namespace Section4Namespace
         {
             // ChallengeIfStatements();
             // ChallengeIfStatements2();
-            ChallengeTernaryOperator();
+            // ChallengeTernaryOperator();
+            // CodingExercise2(16);
+            // CodingExercise3(3);
+            // CodingExercise3(28);
+            // CodingExercise3(1);
+            // CodingExercise3(2);
         }
 
         public static void ChallengeIfStatements()
@@ -100,6 +105,37 @@ namespace Section4Namespace
 
         }
 
+        public static void CodingExercise2(int number)
+        {
+            if ((number % 2) == 0)
+            {
+                Console.WriteLine("Even");
+            } 
+            else
+            {
+                Console.WriteLine("Odd");
+            }
+        }
+
+        public static void CodingExercise3(int number)
+        {
+            if ((number % 3) == 0)
+            {
+                Console.WriteLine("Divisible by 3.");
+            }
+            else if ((number % 7) == 0)
+            {
+                Console.WriteLine("Divisible by 7.");
+            }
+            else if ((number % 2) == 1)
+            {
+                Console.WriteLine("Odd number.");
+            }
+            else
+            {
+                Console.WriteLine("Even number.");
+            }
+        }
 
     }
 }
